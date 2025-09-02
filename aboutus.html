@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Maa Bhagwati Agro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #4CAF50;
+            --accent: #FF9800;
+            --light: #F1F8E9;
+            --dark: #1B5E20;
+            --text: #212121;
+            --text-light: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+        }
+        
+        .nav-menu li {
+            margin: 0 15px;
+        }
+        
+        .nav-menu a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1625246335525-84a5854985c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: var(--light);
+            padding: 15px 0;
+            margin-top: 80px;
+        }
+        
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-content a {
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-content a:hover {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-content span {
+            margin: 0 10px;
+            color: var(--text-light);
+        }
+        
+        /* About Content */
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .founders-story {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .founders-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .founders-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .founders-text {
+            flex: 1;
+        }
+        
+        .founders-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-family: 'Merriweather', serif;
+        }
+        
+        .timeline {
+            margin: 60px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-year {
+            flex: 0 0 150px;
+            text-align: right;
+            padding-right: 30px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 30px;
+            border-left: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .values-section {
+            background-color: var(--light);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .team-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-member:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .team-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .founders-story {
+                flex-direction: column;
+            }
+            
+            .founders-img, .founders-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .timeline-year {
+                flex: 0 0 100px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-year {
+                text-align: left;
+                margin-bottom: 10px;
+                padding-right: 0;
+            }
+            
+            .timeline-content {
+                padding-left: 20px;
+                border-left: 2px solid var(--primary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyRTdEMzIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNyA4YTUgNSAwIDEgMCA4IDBtLTUgMGE1IDUgMCAxIDAgOCAwIi8+PHBhdGggZD0iTTIgMTBsMiAyIi8+PHBhdGggZD0iTTIwIDEwbC0yIDIiLz48cGF0aCBkPSJNOS41IDE1YTMuNSAzLjUgMCAwIDAgNSAwIi8+PHBhdGggZD0iTTkgMmg2Ii8+PHBhdGggZD0iTTMgMmgxIi8+PHBhdGggZD0iTTIwIDJoMSIvPjxwYXRoIGQ9Ik0zIDJ2MyIvPjxwYXRoIGQ9Ik0yMSAydjMiLz48cGF0aCBkPSJNMTIgN1YyIi8+PC9zdmc+" alt="Maa Bhagwati Agro Logo">
+                <span class="logo-text">Maa Bhagwati Agro</span>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container breadcrumb-content">
+            <a href="index.html">Home</a>
+            <span>></span>
+            <a href="about.html">About Us</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>Our Story</h1>
+            <p>From humble beginnings to a trusted name in organic farming</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Maa Bhagwati Agro</h2>
+                <p>Our journey of passion, dedication, and growth</p>
+            </div>
+            
+            <div class="founders-story">
+                <div class="founders-img">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Farmers working in field">
+                </div>
+                <div class="founders-text">
+                    <h3>Our Humble Beginnings</h3>
+                    <p>Maa Bhagwati Agro was founded in 2010 by brothers Rajendra Kathore and Mahesh Kathore, sons of Nemi Chand Kathore. What started as a small family business in Diwal Pandhana, Khandwa, has grown into a trusted name in organic farming and export.</p>
+                    
+                    <p>Inspired by their father's dedication to farming and with the blessings of Maa Bhagwati, the brothers began with a vision to provide chemical-free, high-quality agricultural products. Their commitment to organic practices and sustainable farming has been the cornerstone of their success.</p>
+                    
+                    <p>From the initial days of working on a small piece of land to now managing extensive farms, Maa Bhagwati Agro has always prioritized quality over quantity. The brothers' hands-on approach and dedication to their values have earned them the trust of clients both locally and internationally.</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h4>The Beginning</h4>
+                        <p>Rajendra and Mahesh Kathore started with a small plot of land, focusing on organic wheat and soybean cultivation. They faced numerous challenges but remained committed to their vision of chemical-free farming.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h4>First Expansion</h4>
+                        <p>After two years of hard work, the brothers expanded their operations to include onion cultivation and chili seed production. Their reputation for quality began to grow in the local market.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h4>Diversification</h4>
+                        <p>Maa Bhagwati Agro ventured into grape cultivation with a focus on export-quality produce. They also began offering agro consultancy services to help other local farmers adopt organic practices.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h4>Recognition</h4>
+                        <p>The business received certification for organic farming practices and began exporting grapes to international markets. This was a significant milestone for the company.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h4>Present Day</h4>
+                        <p>Today, Maa Bhagwati Agro is a recognized name in organic farming, exporting products to several countries while maintaining their commitment to quality and sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Organic Commitment</h3>
+                    <p>We are dedicated to 100% organic farming practices, ensuring our products are free from harmful chemicals and pesticides.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Family Legacy</h3>
+                    <p>As a family-run business, we maintain the values and traditions passed down through generations while embracing modern techniques.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We practice farming methods that protect the environment and ensure the land remains fertile for future generations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality Excellence</h3>
+                    <p>From seed selection to harvest, we maintain the highest standards to deliver premium quality products to our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Founders</h2>
+                <p>The visionaries behind Maa Bhagwati Agro</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rajendra Kathore">
+                    </div>
+                    <div class="team-info">
+                        <h3>Rajendra Kathore</h3>
+                        <p>Co-Founder & Managing Director</p>
+                        <p>With over 13 years of experience in organic farming, Rajendra leads the operations and strategic direction of the company.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mahesh Kathore">
+                    </div>
+                    <div class="team-info">
+                        <h3>Mahesh Kathore</h3>
+                        <p>Co-Founder & Technical Director</p>
+                        <p>Mahesh specializes in crop management and export operations, ensuring the highest quality standards are maintained.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1584302178942-964c1b0c5e0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nemi Chand Kathore">
+                    </div>
+                    <div class="team-info">
+                        <h3>Nemi Chand Kathore</h3>
+                        <p>Inspiration & Guide</p>
+                        <p>The family patriarch whose dedication to farming inspired his sons to establish Maa Bhagwati Agro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Maa Bhagwati Agro</h4>
+                    <p>Quality organic farming and export services from the heart of India.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Organic Wheat</a></li>
+                        <li><a href="#">Onion</a></li>
+                        <li><a href="#">Chili Seeds</a></li>
+                        <li><a href="#">Soyabin Seeds</a></li>
+                        <li><a href="#">Grapes Export</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Diwal Pandhana, Khandwa</li>
+                        <li><i class="fas fa-phone"></i> +91 9165560039</li>
+                        <li><i class="fas fa-envelope"></i> maabhagwati_info@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Maa Bhagwati Agro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
